@@ -51,7 +51,7 @@ exports.doRegister = function (req, res, next) {
       return next(err);
     }
     // 如果存在，告诉用户用户名已经存在了 SELECT
-    if (result) {
+    if (!!result) {
       return res.json({
         code: '0',
         msg: '用户名已存在'
