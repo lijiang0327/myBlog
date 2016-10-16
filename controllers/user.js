@@ -51,7 +51,7 @@ exports.doRegister = function (req, res, next) {
       return next(err);
     }
     // 如果存在，告诉用户用户名已经存在了 SELECT
-    if (!!result) {
+    if (result.length && result.length > 0) {
       return res.json({
         code: '0',
         msg: '用户名已存在'
@@ -118,8 +118,9 @@ exports.doLogin = function (req, res, next) {
     }
 
     password = `${utility.md5(utility.md5(password+req.app.locals.config.secret))}`;
+    console.log(password);
 
-    if (password !== result.password) {
+    if (password !== result[0].password) {
       return res.json({
         code: '0',
         msg: '密码错误'

@@ -19,7 +19,7 @@ dbs.find = function(collection, findObj, callback) {
         col.find(findObj).toArray((err, items) => {
             db.close;
             if(err) return callback(err);
-            callback(null, err);
+            callback(null, items);
         })
     })
 }

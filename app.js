@@ -10,6 +10,7 @@ const config = require('./config');
 const app = express();
 
 // 配置静态文件服务中间件
+app.use('/', express.static('www/view'));
 app.use('/www',express.static('www'));
 app.use('/uploads',express.static('uploads'));
 

@@ -30,7 +30,7 @@ User.getByUsername = function (username, callback) {
   dbs.find('object', {username: username}, (err, items) => {
     if(err) return callback(err);
     console.log(items);
-    callback(null, items)
+    callback(null, items);
   });
 };
 

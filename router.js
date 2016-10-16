@@ -9,7 +9,7 @@ const userController = require('./controllers/user');
 const articleController = require('./controllers/article');
 
 router.get('/', indexController.showIndex);
-router.get('/register', userController.showRegister);
+// router.get('/register', userController.showRegister);
 router.post('/register', userController.doRegister);
 router.get('/login', userController.showLogin);
 router.post('/login', userController.doLogin);
